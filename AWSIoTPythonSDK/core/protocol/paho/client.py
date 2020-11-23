@@ -2413,7 +2413,10 @@ class Client(object):
             # Don't let that crash the whole client. See also: http://bugs.python.org/issue13721
             raise ssl.SSLError('Not connected')
 
+        print(cert)
+
         san = cert.get('subjectAltName')
+        print(san)
         if san:
             have_san_dns = False
             for (key, value) in san:
