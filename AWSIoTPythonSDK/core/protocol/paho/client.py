@@ -2433,6 +2433,8 @@ class Client(object):
                 # Only check subject if subjectAltName dns not found.
                 raise ssl.SSLError('Certificate subject does not match remote hostname.')
         subject = cert.get('subject')
+        print(subject)
+        print(self._host.lower())
         if subject:
             for ((key, value),) in subject:
                 if key == 'commonName':
