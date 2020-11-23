@@ -544,6 +544,9 @@ class AWSIoTMQTTClient:
         self._load_callbacks()
         return self._mqtt_core.connect_async(keepAliveIntervalSecond, ackCallback)
 
+    def tls_insecure_set(self, insecure):
+        self._mqtt_core._internal_async_client._paho_client.tls_insecure_set(insecure)
+
     def _load_callbacks(self):
         self._mqtt_core.on_online = self.onOnline
         self._mqtt_core.on_offline = self.onOffline
