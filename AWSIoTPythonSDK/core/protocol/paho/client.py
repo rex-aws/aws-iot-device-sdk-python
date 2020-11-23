@@ -2441,7 +2441,7 @@ class Client(object):
                     if self._host_matches_cert(self._host.lower(), value.lower()) == True:
                         return
 
-        raise ssl.SSLError('Certificate subject does not match remote hostname.')
+        print(ssl.SSLError('Certificate subject does not match remote hostname.'))
 
 
 # Compatibility class for easy porting from mosquitto.py. 
